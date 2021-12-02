@@ -13,7 +13,10 @@ function App() {
   const [foodsList, setFoodsList] = useState(foods);
   const [filteredList, setFilteredList] = useState(foods);
 
-  const addNewFood = (newFood) => setFoodsList([newFood, ...foodsList]);
+  const addNewFood = (newFood) => {
+    setFilteredList([newFood, ...filteredList]);
+    setFoodsList([newFood, ...foodsList]);
+  };
 
   const filterFoodList = (query) =>
     setFilteredList(
